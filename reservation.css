@@ -1,0 +1,102 @@
+/* Variables globales et styles de base (inchangés) */
+:root {
+    --primary-color: royalblue;
+    --secondary-color: aqua;
+    --accent-color: #E74C3C;
+    --text-color: #2C3E50;
+    --light-bg: #F5F6FA;
+    --white: #FFFFFF;
+}
+
+/* Réservation Page Specific Styles */
+main {
+    padding: 120px 20px 60px;
+    background: var(--light-bg);
+    min-height: 80vh;
+    text-align: center;
+}
+
+main h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form label {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+form input,
+form textarea,
+form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.2);
+}
+
+form textarea {
+    resize: none;
+}
+
+form button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Footer alignment for reservation page */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* Header styles (inchangés) */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+}
+
+.header-top {
+    padding: 20px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+}
+

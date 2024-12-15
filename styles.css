@@ -1,0 +1,330 @@
+/* Variables globales et styles de base (inchangés) */
+:root {
+    --primary-color: royalblue;
+    --secondary-color: aqua;
+    --accent-color: #E74C3C;
+    --text-color: #2C3E50;
+    --light-bg: #F5F6FA;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header styles (inchangés) */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+}
+
+.header-top {
+    padding: 20px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+}
+
+/* Navigation styles (inchangés) */
+nav {
+    background-color: var(--white);
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+}
+
+/* Hero Section modifié */
+.hero {
+    height: 80vh;
+    width: 100%;
+    background: url('assets/images/image6.jpeg') center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 180px;
+}
+
+/* Nouvelle section pour le contenu alterné */
+.alternating-section {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.content-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content-block {
+    display: flex;
+    align-items: center;
+    margin: 60px 0;
+    gap: 50px;
+}
+
+.content-block:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.content-text {
+    flex: 1;
+    padding: 40px;
+}
+
+.content-image {
+    flex: 1;
+    position: relative;
+}
+
+.content-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.content-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.content-text p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Style pour les cartes de caractéristiques */
+.features {
+    background-color: var(--light-bg);
+    padding: 80px 0;
+}
+
+.features-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+/* Footer modifié */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 60px 20px 20px;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+
+
+/* Media Queries */
+@media (max-width: 968px) {
+    .content-block {
+        flex-direction: column !important;
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    .content-text {
+        padding: 20px;
+    }
+
+    .content-image img {
+        height: 300px;
+    }
+
+    .features-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animations */
+.content-block {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
+
+.content-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center; /* Centre les images dans leur conteneur */
+    gap: 0; /* Supprime les espaces entre les images */
+    flex-wrap: wrap; /* Permet le retour à la ligne sur petits écrans */
+}
+
+.image-gallery .main-image {
+    width: 33%; /* Chaque image prend un tiers de la largeur du conteneur */
+    height: auto;
+    object-fit: cover; /* Ajuste les images sans les déformer */
+    margin: 0; /* Supprime les marges */
+    border-radius: 0; /* Supprime les coins arrondis */
+}
+
+/* Réservation Page Specific Styles */
+main {
+    padding: 120px 20px 60px;
+    background: var(--light-bg);
+    min-height: 80vh;
+    text-align: center;
+}
+
+main h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form label {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+form input,
+form textarea,
+form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.2);
+}
+
+form textarea {
+    resize: none;
+}
+
+form button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Footer alignment for reservation page */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.crew-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.crew-member img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.crew-member img:hover {
+    transform: scale(1.1);
+}
+
+.crew-member p {
+    font-size: 1.2em;
+    color: var(--text-color);
+    line-height: 1.5;
+    margin-top: 15px;
+}
